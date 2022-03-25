@@ -8,32 +8,35 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+  <header>
       <div class="logo">
         <h1>Blog</h1>
       </div>
       <div class="pc-menu">
-          <nav>
-              <ul>
-                  <li><a href="index.php">Top</a></li>
-                  <li><a href="diary.php">Diary</a></li>
-                  <li><a href="profile.php">Profile</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="sp-menu">
-          <span class="material-icons" id="open">menu</span>
-        </div>
-    </header>
-
-    <div class="overlay">
-        <span class="material-icons" id="close">close</span>
         <nav>
-            <ul>
-                <li><a href="index.php">Top</a></li>
-                <li><a href="diary.php">Diary</a></li>
-                <li><a href="profile.php">Profile</a></li>
-            </ul>
+          <ul>
+            <li><a href="index.php">Top</a></li>
+            <li><a href="diary.php">Diary</a></li>
+            <li><a href="profile.php">Profile</a></li>
+          </ul>
         </nav>
+      </div>
+      <div id="app">
+        <div class="sp-menu" @click="showMenu">
+          <span class="material-icons" id="menu-btn" v-show="!activeBtn">menu</span>
+          <span class="material-icons" id="close" v-show="activeBtn">close</span>
+        </div>
+    
+      <transition name="menu">
+        <div class="menu" v-show="activeBtn">
+          <nav>
+            <ul>
+              <li><a href="index.php">Top</a></li>
+              <li><a href="diary.php">Diary</a></li>
+              <li><a href="profile.php">Profile</a></li>
+            </ul>
+          </nav>
+        </div>
+      </transition>
     </div>
-<div id="app">
+  </header>

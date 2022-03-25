@@ -1,82 +1,19 @@
 (function() {
-    'use strict';
-    
+    'use strict';{
 
-    // let vm = new Vue({
-    //   el: '#app',
-    //   data: {
-    //     newTitle:'',
-    //     newText:'',
-    //     error1:false,
-    //     error2:false,
-    //     showEdit:false,
-    //     editBtn:true,
-    //     finBtn:false,
-    //     items:[],
-    //     newItem: '',
-    //   },
-    //   methods: {
-    //     addItem: function() {
-    //       if (this.newTitle == '') {
-    //         this.error1 = true;
-    //         return;
-    //     }else if (this.newTitle == ''){
-    //         this.error1 = false;
-    //         return;
-    //     }else{
-    //           this.error1 = false;
-    //     }
-    //       if (this.newText == '') {
-    //         this.error2 = true;
-    //         return;
-    //       }
-        //   let blog = {
-        //     title: this.newTitle,
-        //     text: this.newText,
-        //   }
-        //   this.items.unshift(blog);
-        //   this.newTitle = '';
-        //   this.newText = '';
-        //   this.error2 = false;
-        // },
-        // deleteItem:function(index){
-        //     if (!confirm('記事をを削除しますか？')){
-        //         return;
-        //     }
-        //     this.items.splice(index,1);
-        // },
-        // editItem:function(index){
-        //     if(this.showEdit === false){
-        //         this.showEdit= true;
-        //     }else if (this.showEdit === true){
-        //         this.showEdit = false;
-        //     }
-        // },
-        // editTask:function(index){
-        //     if (this.showEdit === true) {
-        //         this.showEdit = false;
-        //     }
-        // }
-    // }
-    // });
-
-
-{   //メニュー
-    const open = document.getElementById('open');
-    const overlay = document.querySelector('.overlay');
-    const close = document.getElementById('close');
-
-    open.addEventListener('click',function(){
-        overlay.classList.add('show');
-        open.classList.add('hide');
-    });
-
-    close.addEventListener('click',function(){
-        overlay.classList.remove('show');
-        open.classList.remove('hide');
-
-    });
+let app = new Vue({
+    el:'#app',
+    data:{
+        activeBtn:false
+    },
+    methods: {
+        showMenu:function() {
+          this.activeBtn = !this.activeBtn
+        }
+    }
+})
 }
+
 
 {   //カルーセル
     const next = document.getElementById('next');
@@ -141,9 +78,6 @@ function updateDots(){
         moveSlides();
     })
 }
-
-
-
 
 })();
 
