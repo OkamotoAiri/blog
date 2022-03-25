@@ -38,7 +38,9 @@ $posts = array_reverse($posts);
             <?php endif; ?>
         </ul>
     </div>
-
+    <div id="components-demo">
+        <home-btn></home-btn>
+    </div>
 <?php
 
 include('_footer.php');
