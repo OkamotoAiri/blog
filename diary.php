@@ -15,7 +15,7 @@ $posts = array_reverse($posts);
 <div class="form-wrapper">
     <form action="new_diary.php" method="post">
         <label>タイトル<br><input type="text" name="title"></label><br><br>
-        <label>本文<br><input type="text" name="text" id="text-box"></label>
+        <label>本文<br><textarea name="text" id="text-box"></textarea></label>
         <br><input type="submit" value="書き込む">
     </form>
 </div>
@@ -38,10 +38,11 @@ $posts = array_reverse($posts);
             <?php endif; ?>
         </ul>
     </div>
+
     <div id="components-demo">
-        <home-btn></home-btn>
-    </div>
+  <home-btn></home-btn>
+</div><br>
+
 <?php
 
 include('_footer.php');
-

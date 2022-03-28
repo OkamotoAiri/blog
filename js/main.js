@@ -13,7 +13,7 @@ let app = new Vue({
     }
 })
 
-new Vue({
+let app2 = new Vue({
     el: "#app2",
    components: {
     'carousel': VueCarousel.Carousel,
@@ -24,7 +24,7 @@ new Vue({
 Vue.component('home-btn', {
     template: '<center><br><a href="index.php" class="btn">Home</a></center>'
   })
-  new Vue({
+new Vue({
       el: '#components-demo'
     })
 

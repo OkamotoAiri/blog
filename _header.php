@@ -21,7 +21,7 @@
           </ul>
         </nav>
       </div>
-      <div id="app">
+      <div id="app" v-cloak>
         <div class="sp-menu" @click="showMenu">
           <span class="material-icons" id="menu-btn" v-show="!activeBtn">menu</span>
           <span class="material-icons" id="close" v-show="activeBtn">close</span>
@@ -29,13 +29,11 @@
     
       <transition name="menu">
         <div class="menu" v-show="activeBtn">
-          <nav>
             <ul>
               <li><a href="index.php">Top</a></li>
               <li><a href="diary.php">Diary</a></li>
               <li><a href="profile.php">Profile</a></li>
             </ul>
-          </nav>
         </div>
       </transition>
     </div>

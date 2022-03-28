@@ -16,6 +16,10 @@ header {
     z-index: 1;
 }
 
+[v-cloak] {
+    opacity: 0;
+}
+
 header h1 {
     margin:0;
     font-size: 22px;
@@ -28,7 +32,7 @@ header h1 {
 }
 
 p {
-    white-space: normal;
+    white-space: pre-wrap;
   }
 
 ul {
@@ -41,7 +45,6 @@ ul {
     position: fixed;
     right: 20px;
     z-index: 3;
-    /* display: flex; */
     color:#000;
     font-size:32px;
     line-height:64px;

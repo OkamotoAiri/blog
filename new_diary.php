@@ -1,7 +1,8 @@
 <?php
 include('_header.php');
 
-$dataFile = 'message.dat';
+// $dataFile = 'message.dat';
+
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && 
@@ -9,17 +10,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' &&
     isset($_POST['text'])) {
 
     $title = trim($_POST['title']);
-    $text = trim($_POST['text']);
+    // $text = $_POST['text'];
+    $text = str_replace(array("\r\n","\r","\n"), "", $_POST['text']);
 
     if ($title !== '') {
         
         $postedAt = date('Y-m-d H:i');
 
-        $newData = $title . "\t" . $text . "\t" . $postedAt . "\n" ;
+        $newData = $title . "\t" .  $text  . "\t" . $postedAt . "\n" ;
 
-        $fp = fopen($dataFile, 'a');
+        $fp = fopen('message.dat', 'a');
         fwrite($fp, $newData);
         fclose($fp);
+        
     }
 }
 
